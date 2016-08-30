@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="row">	
+	<div class="col-md-6">	
+	<form class="form-inline invoice-form">
+        <div class="invoice-cls">
+            <div class="delete_parent">
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+              </div>
+              <button type="button" class="btn btn-danger delete">Delete</button>
+              <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="invoice-append"></div>
+        <button type="button" class="btn btn-info addMore">Add More</button>
+      </form>
+	</div>
+	</div>
+	</div>
+
+<script type="text/javascript" src="src/js/bootstrap.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+ $(".addMore").click(function(){
+
+    var invoice_form = $(".invoice-cls").children().clone();
+    $(".invoice-append").append(invoice_form);
+    });
+
+ 	$( '.invoice-form' ).on( 'click', '.delete', function () {
+    $(this).parent().remove();
+    });
+    
+</script>
+</body>
+</html>
+
