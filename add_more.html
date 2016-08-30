@@ -35,16 +35,16 @@
 <script type="text/javascript" src="src/js/bootstrap.js"></script>
 <script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
 <script type="text/javascript">
- $(".addMore").click(function(){
+$( document ).ready(function() {
+ 	$(".addMore").click(function(){
+	    var invoice_form = $(".invoice-cls").children().clone();
+	    $(".invoice-append").append(invoice_form);
+	    });
 
-    var invoice_form = $(".invoice-cls").children().clone();
-    $(".invoice-append").append(invoice_form);
+	 	$( '.invoice-form' ).on( 'click', '.delete', function () {
+	    $(this).parent().remove();
     });
-
- 	$( '.invoice-form' ).on( 'click', '.delete', function () {
-    $(this).parent().remove();
-    });
-    
+});
 </script>
 </body>
 </html>

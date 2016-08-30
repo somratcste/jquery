@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="row">	
+	
+	<form class="form-inline">
+    <input type="text" class="calculate form-control" id="first" />
+    <input type="text" class="calculate form-control" id="second"/>
+    <label>Total :</label>
+    <input type="text" class="form-control" id="third"/>    
+  </form>
+
+	</div>
+	</div>
+
+<script type="text/javascript" src="src/js/bootstrap.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+ 	$(".calculate").keyup(function(){
+      var first_val = $("#first").val();
+      var second_val = $("#second").val();
+      if(first_val != "" && second_val != "") {
+        $("#third").val(parseInt(first_val) + parseInt(second_val));
+      } else {
+        $("#third").val("");
+      }
+    });
+});
+</script>
+</body>
+</html>
+
