@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="row">	
+	<div class="col-md-6">	
+		<form method="post" action="#">
+    
+		    <label>Exercises</label>
+		    
+		    <fieldset id="exercises">
+		        <div class="exercise">
+		            <input type="text" name="exercise[]"><button class="remove">x</button>
+		        </div>
+		    </fieldset>
+		            
+		    <button id="add_exercise">add exercise</button>
+		    
+		</form>
+	</div>
+	</div>
+	</div>
+
+<script type="text/javascript" src="src/js/bootstrap.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#add_exercise').on('click' , function() {
+			$('#exercises').append('<div class="exercise"><input type="text" name="exercise[]"><button class="remove">x</button></div>');
+			return false;
+		});
+
+		$('#exercises').on('click' , '.remove' , function() {
+			$(this).parent().remove();
+			return false
+		});
+	});
+</script>
+</body>
+</html>
+

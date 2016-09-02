@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="row">	
+	<div class="col-md-6">	
+		<input id="ageInput" value="09/02/2016"> 
+
+		<button onclick="GetDate()">Click Me</button>
+
+		<div id="result"></div>
+		<div id="result2"></div>
+
+		<div id="DisplayDate"></div>
+
+	</div>
+	</div>
+	</div>
+
+<script type="text/javascript" src="src/js/bootstrap.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		function GetDate(name, name2)
+		{
+		    document.getElementById("result").innerHTML = getAge(document.getElementById("ageInput").value);
+		}
+
+
+		function getAge(dateString) 
+		{
+		    var today = new Date();
+		    var birthDate = new Date(dateString);
+		    
+		    var age = today.getFullYear() - birthDate.getFullYear();
+		    
+		    var m = today.getMonth() - birthDate.getMonth();
+		    
+		    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+		        age--;
+		    }
+		    return age;
+		}
+
+	});
+</script>
+</body>
+</html>
+
