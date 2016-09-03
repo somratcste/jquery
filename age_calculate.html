@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="row">	
+<div class="col-md-6">	
+	<div ng-controller="MyCtrl" ng-app = "">Day
+    <select ng-model="selectedDay" ng-options="day as day.date for day in days"></select>Month
+    <select ng-model="selectedMonth" ng-options="month as month.date for month in months"></select>Year
+    <select ng-model="selectedYear" ng-options="year as year.date for year in years"></select>
+    <button ng-click="dateDiff(selectedMonth, selectedDay, selectedYear)">Calculate Age</button>{{age}}
+	</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="src/js/bootstrap.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var myApp = angular.module('myApp', []);
+
+		function MyCtrl($scope) {
+		    $scope.selectedDay;
+		    $scope.selectedMonth;
+		    $scope.selectedYear;
+		    $scope.age;
+
+		    $scope.days = [{
+		        id: 1,
+		        date: 3
+		    }, {
+		        id: 2,
+		        date: 15
+		    }, {
+		        id: 3,
+		        date: 30
+		    }];
+
+		    $scope.months = [{
+		        id: 1,
+		        date: 8
+		    }, {
+		        id: 2,
+		        date: 9
+		    }, {
+		        id: 3,
+		        date: 10
+		    }];
+
+		    $scope.years = [{
+		        id: 1,
+		        date: 1960
+		    }, {
+		        id: 2,
+		        date: 1963
+		    }, {
+		        id: 3,
+		        date: 1980
+		    }];
+
+		    $scope.dateDiff = function (birthMonth, birthDay, birthYear) {
+		        var todayDate = new Date(),
+		            todayYear = todayDate.getFullYear(),
+		            todayMonth = todayDate.getMonth(),
+		            todayDay = todayDate.getDate(),
+		            age = todayYear - birthYear.date;
+
+		        if (todayMonth < birthMonth.date - 1) {
+		            age--;
+		        }
+
+		        if (birthMonth.date - 1 === todayMonth && todayDay < birthDay.date) {
+		            age--;
+		        }
+
+		        return $scope.age = age;
+		    };
+
+		}
+	});
+</script>
+</body>
+</html>
+
