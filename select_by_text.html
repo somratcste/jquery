@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="row">	
+	<div class="col-md-6">	
+		<select name="sel" id="MySelect">
+		  <option value="">Select One</option>
+		  <option value="1">One</option>
+		  <option value="2">Two</option>
+		  <option value="3">Three</option>
+		  <option value="4">Four</option>
+		  <option value="5">Five</option>
+		  <option value="6">Six</option>
+		</select>
+		<br>
+		<br>Select By Text:
+		<br>
+		<input type="text" name="selText" value="Six">
+		<input type="button" name="selectNow" value="Select Now">
+	</div>
+	</div>
+	</div>
+
+<script type="text/javascript" src="src/js/bootstrap.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(function () {
+		  $('input[name=selectNow]').on('click', function (event) {
+		    selectByText($.trim($('input[name=selText]').val()));
+		  }).click();
+		});
+
+		function selectByText(txt) {
+		  $('#MySelect option')
+		    .filter(function () {
+		    return $.trim($(this).text()) == txt;
+		  })
+		    .attr('selected', true);
+		}
+	});
+</script>
+</body>
+</html>
+
