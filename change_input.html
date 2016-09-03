@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="row">	
+	<div class="col-md-6">	
+		<select id="second" class="chzn-select" style="width: 100px">
+	    <option value="1">mr</option>
+	    <option value="2">mrs</option>
+	</select>
+	<select id="gender" class="chzn-select" style="width: 100px">
+	    <option value="1">male</option>
+	    <option value="2">female</option>
+	</select>
+	</div>
+	</div>
+	</div>
+
+<script type="text/javascript" src="src/js/bootstrap.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		 $(document).ready(function () {
+	     $('.chzn-select').change(function () {
+	         $('.chzn-select').val($(this).val()).trigger('change');
+	     });
+	 });
+	});
+</script>
+</body>
+</html>
+
