@@ -10,14 +10,11 @@
 	<div class="container">
 	<div class="row">	
 	<div class="col-md-6">	
-		<select id="second" class="chzn-select" style="width: 100px">
-	    <option value="1">mr</option>
-	    <option value="2">mrs</option>
-		</select>
-		<select id="gender" class="chzn-select" style="width: 100px">
-		    <option value="1">male</option>
-		    <option value="2">female</option>
-		</select>
+		<form id="myForm">
+			<input type="radio" name="myRadio" value="1" /> 1 <br />
+			<input type="radio" name="myRadio" value="2" /> 2 <br />
+			<input type="radio" name="myRadio" value="3" /> 3 <br />
+		</form>
 	</div>
 	</div>
 	</div>
@@ -27,11 +24,12 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		
-	     $('.chzn-select').change(function () {
-	         $('.chzn-select').val($(this).val()).trigger('change');
-	     });
-	 	});
+		$('#myForm input').on('change', function() {
+   		alert($('input[name="myRadio"]:checked', '#myForm').val()); 
+});
+
+//for more details visit www.coding-issues.com
+	});
 </script>
 </body>
 </html>
