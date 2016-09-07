@@ -29,6 +29,8 @@ http://jsfiddle.net/codingsolver/MsYqx/
 Sent on:
 Thu
 https://jsfiddle.net/lesson8/9NeXg/
+Calculate multiplication
+http://jsfiddle.net/6nj2z/2/
 
 
 
