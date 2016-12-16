@@ -32,6 +32,8 @@ https://jsfiddle.net/lesson8/9NeXg/
 Calculate multiplication
 http://jsfiddle.net/6nj2z/2/
 
+SHow or hide div By selectiong Value 
+http://jsfiddle.net/RWUdb/
 
 
 codeanywhere
