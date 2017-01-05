@@ -10,7 +10,8 @@
 	<div class="container">
 	<div class="row">	
 	<div class="col-md-6">	
-		<!-- Create your own here -->
+		<p>I love bangladesh . </p>
+		<button>Toggle</button>
 	</div>
 	</div>
 	</div>
@@ -19,7 +20,11 @@
 <script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
 
 <script type="text/javascript">
-	//Create your own here. 
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('p').toggle();
+		});
+	});
 </script>
 </body>
 </html>
