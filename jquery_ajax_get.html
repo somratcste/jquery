@@ -19,7 +19,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		getXml() ;
+		getXml();
+		autoLoad() ;
 	});
 	function getXml() {
 		$.ajax({
@@ -33,9 +34,17 @@
 				});
 			} , 
 			error : function(){
-				$("ul").append('Error');
+				$("ul").children().remove();
+				$("ul").append('<li>There is no data .</li>');
 			}
 		});
+	}
+
+	function autoLoad(){
+		setTimeout(function() {
+			getXml();
+			autoLoad();
+		} ,100);
 	}
 </script>
 </body>
