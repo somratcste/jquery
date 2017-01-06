@@ -9,7 +9,7 @@
 <body>
 	<div class="container">
 	<div class="row">	
-	<div class="col-md-6">	
+	<div class="col-md-6" style="background: green">	
 		<p>I love bangladesh . </p>
 		<button>Toggle</button>
 	</div>
@@ -22,7 +22,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('button').click(function(){
-			$('p').fadeToggle(1000);
+			$('p').css('background', 'red').fadeIn(1000).fadeOut(1000);
 		});
 	});
 </script>
