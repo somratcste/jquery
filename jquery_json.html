@@ -20,21 +20,22 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		var personsJSON = [{
+		var personsJSON = {
+		"Somrat" : {
 			"name" : "Somrat",
 			"skill" : "Php laravel",
 			"department" : "Cste"
 		}, 
 
-		{
+		"G" : {
 			"name" : "G. Somrat",
 			"skill" : "Php laravel",
-			"department" : "Cste"
+			"department" : "pharmacy"
 		}
 
-		];
+		};
 		
-		$("#show").html(personsJSON[0].name);
+		$("#show").html(personsJSON.Somrat.department);
 	});
 </script>
 </body>
