@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="row">	
+	<div class="col-md-6" style="background: green">	
+		<p>I love bangladesh . My beautiful country is so nice and big. I love you my dear . </p>
+		<button>Toggle</button>
+	</div>
+	</div>
+	</div>
+
+<script type="text/javascript" src="src/js/bootstrap.js"></script>
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('p').css('background', 'red').fadeIn(1000).fadeOut(1000);
+		});
+	});
+</script>
+</body>
+</html>
+
